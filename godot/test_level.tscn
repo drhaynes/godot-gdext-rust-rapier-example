@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://j7v0ileo3bwu"]
+
+[ext_resource type="Shader" path="res://test_level.gdshader" id="1_fe3g3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pggvx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vh72m"]
+shader = ExtResource("1_fe3g3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ct4pn"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_xpxps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdj11"]
+size = Vector2(255, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xibkb"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Player" type="Player" parent="."]
+position = Vector2(577, 306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_pggvx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+material = SubResource("ShaderMaterial_vh72m")
+position = Vector2(0.0624998, 0.4375)
+scale = Vector2(17.875, 23.125)
+mesh = SubResource("QuadMesh_ct4pn")
+texture = SubResource("MeshTexture_xpxps")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(602, 402)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_kdj11")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-0.499968, 1.81198e-05)
+scale = Vector2(255, 20)
+mesh = SubResource("QuadMesh_xibkb")

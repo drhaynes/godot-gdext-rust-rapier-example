@@ -1,0 +1,13 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+
+[libraries]
+linux.debug.x86_64 = "res://../rust/target/debug/libnatve_game.so"
+linux.release.x86_64 = "res://../rust/target/release/libnatve_game.so"
+windows.debug.x86_64 = "res://../rust/target/debug/natve_game.dll"
+windows.release.x86_64 = "res://../rust/target/release/natve_game.dll"
+macos.debug = "res://../rust/target/debug/libnatve_game.dylib"
+macos.release = "res://../rust/target/release/libnatve_game.dylib"
+macos.debug.arm64 = "res://../rust/target/aarch64-apple-darwin/debug/libnatve_game.dylib"
+macos.release.arm64 = "res://../rust/target/aarch64-apple-darwin/release/libnatve_game.dylib"
+
